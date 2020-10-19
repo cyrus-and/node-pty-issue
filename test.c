@@ -20,7 +20,7 @@ int main() {
     int master_fd;
     int pid = forkpty(&master_fd, NULL, NULL, NULL);
 
-    assert(pid == -1);
+    assert(pid != -1);
 
     if (pid) {
         struct termios tios;

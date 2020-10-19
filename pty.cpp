@@ -3,7 +3,14 @@
 #include <cstring>
 #include <termios.h>
 #include <unistd.h>
+
+#if __APPLE__
 #include <util.h>
+#endif
+
+#if __linux__
+#include <pty.h>
+#endif
 
 static void spawn(const v8::FunctionCallbackInfo<v8::Value> &args)
 {
